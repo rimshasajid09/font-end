@@ -8,9 +8,21 @@ use Illuminate\Http\Request;
 
 class ThankYouController extends Controller
 {
+    // public function index(Request $request)
+    // {
+    //     $user = User::findByUserToken($request->get('eut'))->first();
+    //     //return view('frontend.thank-you.index',compact('user'));
+    //     return view('frontend.thank-you.index',compact('user'));
+    // }
+
     public function index(Request $request)
     {
         $user = User::findByUserToken($request->get('eut'))->first();
-        return view('frontend.thank-you.index',compact('user'));
+        // if ($user->spinAlreadyUsed)
+        // {
+        //     flash()->error('You have already played your spin');
+        //     return redirect()->route('frontend.register.index');
+        // }
+        return view('frontend.wheel.index');
     }
 }

@@ -50,10 +50,10 @@ class RegisterController extends Controller
         $user         = new User();
         $user->persist($data);
 
-        Mail::to($user)->send(new UserRegisteredEmail($user));
+        //Mail::to($user)->send(new UserRegisteredEmail($user));
 
 
-        $redirect = route('frontend.thank-you.index', ['eut' => $user->hash]);
+        $redirect = route('frontend.thank-you.index');
         return compact('redirect');
     }
 

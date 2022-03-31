@@ -16,14 +16,16 @@ class VerifyUserToken
      */
     public function handle($request, Closure $next)
     {
-        if($request->has('eut'))
-        {
-            $user = User::findByUserToken($request->get('eut'))->first();
-            if($user)
-                return $next($request);
-        }
+        // if($request->has('eut'))
+        // {
+        //     $user = User::findByUserToken($request->get('eut'))->first();
+        //     if($user)
+        //         return $next($request);
+        // }
 
-        flash()->error('You are not logged in');
-        return redirect('/');
+        // flash()->error('You are not logged in');
+        
+         return $next($request);
+        //return redirect('/');
     }
 }
